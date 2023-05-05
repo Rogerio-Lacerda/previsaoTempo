@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background: #00b7cc;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.titulo {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.titulo h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 8px;
+  margin: 0 auto;
+  /* height: 100vh; */
+  gap: 24px;
+}
+
+.previsao {
+  border: 2px solid #fff;
+  display: grid;
+  /* margin-top: 40px; */
+}
+
+.previsao:first-child {
+  justify-self: end;
+}
+
+.previsao:last-child {
+  justify-self: start;
+}
+
+.grid-dia {
+  background: #fff;
+  padding: 8px;
+  display: grid;
+  justify-items: center;
+}
+
+.grid-dia h1 {
+  color: #00b7cc;
+  font-weight: 500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.grid-dia span {
+  display: block;
+  background: #00b7cc;
+  margin-top: 12px;
+  height: 1px;
+  width: 60%;
+}
+
+.grid-dia p {
+  margin-top: 0;
+  color: #00b7cc;
+  font-size: 1.4rem;
+}
+
+.grid-descricao {
+  display: grid;
+  justify-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px;
+}
+
+.grid-descricao p {
+  color: #fff;
+  font-size: 1.2rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.temperatura-maxima,
+.temperatura-minima {
+  background: #fff;
+  padding: 12px 4px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.temperatura-maxima img {
+  transform: rotate(-90deg);
+  width: 16px;
+}
+
+.temperatura-minima img {
+  transform: rotate(90deg);
+  width: 16px;
+}
+
+.temperatura-maxima p,
+.temperatura-minima p {
+  font-size: 2rem;
+}
+
+.linha-divisao {
+  background: #00b7cc;
+  width: 100%;
+  height: 1px;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .container {
+    height: initial;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 20px;
+  }
+  .titulo {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .titulo h1 {
+    font-size: 1.8rem;
+  }
+}
