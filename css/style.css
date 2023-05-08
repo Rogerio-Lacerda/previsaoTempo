@@ -82,6 +82,10 @@ img {
   text-align: center;
 }
 
+.grid-descricao p::first-letter {
+  text-transform: uppercase;
+}
+
 .temperatura-maxima,
 .temperatura-minima {
   background: #fff;
@@ -113,6 +117,13 @@ img {
   display: block;
 }
 
+.carregando {
+  color: #fff;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 2rem;
+}
+
 @media (max-width: 700px) {
   .container {
     padding-top: 20px;
@@ -122,8 +133,15 @@ img {
   }
 }
 
+@media (max-width: 500px) {
+  .carregando {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 400px) {
   .titulo h1 {
     font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 }
