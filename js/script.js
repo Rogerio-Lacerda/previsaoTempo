@@ -13,4 +13,33 @@ async function tempoFetch() {
     console.log(error);
   }
 }
+
+const getData = () => {
+  const data = new Date();
+  const diaNum = data.getDay();
+  const mes = data.getMonth() + 1;
+  const dia = data.getDate();
+  let diaTexto = "Seg";
+  if (diaNum === 0) {
+    diaTexto = "Domingo";
+  } else if (diaNum === 1) {
+    diaTexto = "Segunda";
+  } else if (diaNum === 2) {
+    diaTexto = "Terça";
+  } else if (diaNum === 3) {
+    diaTexto = "Quarta";
+  } else if (diaNum === 4) {
+    diaTexto = "Quinta";
+  } else if (diaNum === 5) {
+    diaTexto = "Sexta";
+  } else if (diaNum === 6) {
+    diaTexto = "Sábado";
+  }
+  return {
+    diaTexto,
+    dia,
+    mes,
+  };
+};
+
 tempoFetch();
