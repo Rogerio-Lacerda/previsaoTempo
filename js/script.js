@@ -5,10 +5,17 @@ async function tempoFetch() {
     );
     const previsaoJson = await previsaoResponse.json();
     const descricao = previsaoJson["weather"][0].description;
-    const tempMax = Math.floor(previsaoJson["main"].temp_max);
+    const tempMax = Math.ceil(previsaoJson["main"].temp_max);
     const tempMin = Math.floor(previsaoJson["main"].temp_min);
     const cidade = previsaoJson.name;
     const pais = previsaoJson["sys"].country;
+    return {
+      descricao,
+      tempMax,
+      tempMin,
+      cidade,
+      pais,
+    };
   } catch (error) {
     console.log(error);
   }
@@ -42,4 +49,40 @@ const getData = () => {
   };
 };
 
-tempoFetch();
+const div = document.createElement("div");
+div.innerHTML = "<h2 class='carregando' >Carregando Informações...</h2>";
+const container = document.querySelector(".container");
+container.appendChild(div);
+
+setTimeout(() => {
+  tempoFetch()
+    .then((body) => body)
+    .then((json) => {
+      const tempoObj = json;
+      const dataObj = getData();
+      div.classList.add("previsao");
+      div.innerHTML = `
+      <div class="grid-dia">
+          <h1>${dataObj.dia < 10 ? "0" + dataObj.dia : dataObj.dia}/${
+        dataObj.mes < 10 ? "0" + dataObj.mes : dataObj.mes
+      }</h1>
+        <span></span>
+        <p>${dataObj.diaTexto}</p>
+      </div>
+        <div class="grid-descricao">
+          <img src="./img/nuvem2.png" alt="">
+          <p>${tempoObj.descricao}</p>
+        </div>
+        <div class="temperatura-maxima">
+          <img src="./img/arrow.svg" alt="Icone de seta">
+          <p>${tempoObj.tempMax}</p>
+        </div>
+        <span class="linha-divisao"></span>
+        <div class="temperatura-minima">
+          <img src="./img/arrow-min.svg" alt="Icone de seta">
+          <p>${tempoObj.tempMin}</p>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+}, 400);
