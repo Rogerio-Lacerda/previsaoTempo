@@ -34,22 +34,11 @@ img {
   width: 100%;
   padding: 40px 8px;
   margin: 0 auto;
-  /* height: 100vh; */
-  gap: 24px;
 }
 
 .previsao {
   border: 2px solid #fff;
   display: grid;
-  /* margin-top: 40px; */
-}
-
-.previsao:first-child {
-  justify-self: end;
-}
-
-.previsao:last-child {
-  justify-self: start;
 }
 
 .grid-dia {
@@ -126,19 +115,10 @@ img {
 
 @media (max-width: 700px) {
   .container {
-    height: initial;
-    flex-wrap: wrap;
-    gap: 16px;
     padding-top: 20px;
   }
   .titulo {
     margin: 20px 0;
-  }
-}
-
-@media (max-width: 550px) {
-  .container {
-    gap: 32px;
   }
 }
 
