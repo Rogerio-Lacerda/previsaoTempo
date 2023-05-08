@@ -48,10 +48,11 @@ img {
   justify-items: center;
 }
 
-.grid-dia h1 {
+.grid-dia h2 {
   color: #00b7cc;
   font-weight: 500;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  margin-top: 12px;
 }
 
 .grid-dia span {

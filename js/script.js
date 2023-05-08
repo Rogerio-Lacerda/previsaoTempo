@@ -63,9 +63,11 @@ setTimeout(() => {
       div.classList.add("previsao");
       div.innerHTML = `
       <div class="grid-dia">
-          <h1>${dataObj.dia < 10 ? "0" + dataObj.dia : dataObj.dia}/${
+      <p>${tempoObj.cidade}-${tempoObj.pais}</p>
+      <span></span>
+          <h2>${dataObj.dia < 10 ? "0" + dataObj.dia : dataObj.dia}/${
         dataObj.mes < 10 ? "0" + dataObj.mes : dataObj.mes
-      }</h1>
+      }</h2>
         <span></span>
         <p>${dataObj.diaTexto}</p>
       </div>
